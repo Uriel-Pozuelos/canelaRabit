@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: uploads_files_2837355_wolf.fbx
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 30b7a73f3120b2948b3abf7e4f09f524,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 330d6aa887a6f5948b6abc6e13176e58, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

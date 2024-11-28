@@ -120,7 +120,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: rig|idle
+      name: Idle
       takeName: rig|idle
       internalID: 1599155768152908184
       firstFrame: 0
@@ -236,7 +236,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: rig|walking
+      name: Walk
       takeName: rig|walking
       internalID: 8792363992049388215
       firstFrame: 0
@@ -331,7 +331,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
