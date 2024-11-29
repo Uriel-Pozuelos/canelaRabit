@@ -3,7 +3,37 @@ guid: 30b7a73f3120b2948b3abf7e4f09f524
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark grey
+    second: {fileID: 2100000, guid: da5d01174f318c54cbe9ffbe33a91bc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyebrows
+    second: {fileID: 2100000, guid: f2c4ac76f5a05cc48a1b43ebc6fcb32b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyes
+    second: {fileID: 2100000, guid: ea619d4a30804ff448c0d29f085c0c39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray
+    second: {fileID: 2100000, guid: 60f3260081855f44ebeed4ad0543235b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray2
+    second: {fileID: 2100000, guid: 9c7025ecd0311254ca33941e86bcacce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light grey
+    second: {fileID: 2100000, guid: 1007ec2e9011c374383be6cff2fa1248, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

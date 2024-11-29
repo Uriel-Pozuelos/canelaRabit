@@ -58,6 +58,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5995213820269611569, guid: 30b7a73f3120b2948b3abf7e4f09f524,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.74
+      objectReference: {fileID: 0}
+    - target: {fileID: -5995213820269611569, guid: 30b7a73f3120b2948b3abf7e4f09f524,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.15
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 30b7a73f3120b2948b3abf7e4f09f524,
         type: 3}
       propertyPath: m_Name
@@ -75,11 +85,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 30b7a73f3120b2948b3abf7e4f09f524,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5687299022149017962}
+      addedObject: {fileID: -4819081001014942248}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 30b7a73f3120b2948b3abf7e4f09f524,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -4819081001014942248}
+      addedObject: {fileID: 2213163733693611255}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 30b7a73f3120b2948b3abf7e4f09f524,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4188949902520604854}
   m_SourcePrefab: {fileID: 100100000, guid: 30b7a73f3120b2948b3abf7e4f09f524, type: 3}
 --- !u!1 &3069428714392791522 stripped
 GameObject:
@@ -87,24 +101,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2763421226541585587}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5687299022149017962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3069428714392791522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e739f3ce5caab4fb55c445169d120c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vida: 3
-  player: {fileID: 2970182539512918776, guid: 3556cae5db4d3924e965b0cc4b3cdfbb, type: 3}
-  deathParticlesPrefab: {fileID: 165606380172257878, guid: bb74ab8b27f248b4599706895c88df56,
-    type: 3}
-  comportamiento: 1
-  speed: 2
 --- !u!54 &-4819081001014942248
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -132,3 +128,40 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &2213163733693611255
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069428714392791522}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.24167326, y: 0.22450256, z: 1.1690278}
+  m_Center: {x: 0.014034286, y: 3.2417216, z: -3.2289755}
+--- !u!114 &4188949902520604854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069428714392791522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e739f3ce5caab4fb55c445169d120c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 3
+  deathParticlesPrefab: {fileID: 165606380172257878, guid: bb74ab8b27f248b4599706895c88df56,
+    type: 3}
+  speed: 1

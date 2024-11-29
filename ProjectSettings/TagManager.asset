@@ -13,14 +13,16 @@ TagManager:
   - Generator
   - SpotLight
   - AI
+  - Ground
+  - Bala
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Ground
   - 
   - Lamps
   - Support

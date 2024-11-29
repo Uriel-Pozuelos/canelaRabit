@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
                 // Si el jugador está en rango, activa el movimiento del enemigo
                 if (jugadorEnRango)
                 {
-                    enemigo.ActivarMovimiento(true);
+                    //enemigo.ActivarMovimiento(true);
                 }
             }
         }
@@ -64,7 +64,7 @@ public class Spawner : MonoBehaviour
         {
             if (enemigo != null)
             {
-                enemigo.ActivarMovimiento(activar);
+                //enemigo.ActivarMovimiento(activar);
             }
         }
     }
