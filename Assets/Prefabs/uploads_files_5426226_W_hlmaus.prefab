@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d9483d14376a2fb48bf6f3a82af6edff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.88
+      value: 2.52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d9483d14376a2fb48bf6f3a82af6edff,
         type: 3}
@@ -80,6 +80,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 117699717814570202}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d9483d14376a2fb48bf6f3a82af6edff,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5729744940811434414}
   m_SourcePrefab: {fileID: 100100000, guid: d9483d14376a2fb48bf6f3a82af6edff, type: 3}
 --- !u!1 &8720804242032686227 stripped
 GameObject:
@@ -127,5 +131,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 3
-  deathParticlesPrefab: {fileID: 0}
+  player: {fileID: 7476558936256643371, guid: aa6c98e1e16a7ab4ba74b2528765d4f5, type: 3}
+  deathParticlesPrefab: {fileID: 165606380172257878, guid: bb74ab8b27f248b4599706895c88df56,
+    type: 3}
+  comportamiento: 1
   speed: 1
+--- !u!136 &5729744940811434414
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8720804242032686227}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3496525
+  m_Height: 0.699305
+  m_Direction: 1
+  m_Center: {x: 0.25947332, y: 0.40267447, z: -0.15575466}

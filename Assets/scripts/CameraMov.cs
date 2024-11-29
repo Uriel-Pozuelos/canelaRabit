@@ -10,9 +10,9 @@ public class CameraMov : MonoBehaviour
         
     }
 
-	// Update is called once per frame
-	void Update()
-	{
-		transform.Rotate(-Input.GetAxisRaw("Mouse Y"), 0, 0);
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Rotate(-Input.GetAxisRaw("Mouse Y"), 0, 0);
+    }
 }

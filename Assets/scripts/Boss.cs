@@ -6,84 +6,76 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     public int vida = 5;
-    public float velocidad = 3f;
-    public float rangoDeteccion = 10f;
+    public GameObject player;
+    public GameObject deathParticlesPrefab;
+    public float speed;
 
-    public Transform player;
-    public Animator animator;
+    private int comportamiento = 0; // 0 = Idle, 1 = Follow Player
+    private Animator animator;
     private Rigidbody rb;
-    private bool enRango = false;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //comportamiento = 1;
+        //player = GameObject.Find("Player");
+        //InvokeRepeating("CambiarDireccion", 3, 3);
+
+        comportamiento = 0; // Inicia en Idle
+        player = GameObject.Find("Player");
         animator = GetComponent<Animator>();
-        // Busca automáticamente al Player si no está asignado
-        if (player == null)
-        {
-            player = GameObject.FindWithTag("Player").transform;
-        }
-
-        // Obtén el componente Animator si no se asignó en el Inspector
-        //if (animator == null)
-        //{
-        //    animator = GetComponent<Animator>();
-        //}
-
-        CambiarEstado("Idle");
+        rb = GetComponent<Rigidbody>();
+        CambiarAnimacion(false); // Setea animación Idle
     }
 
     void Update()
     {
-        // Calcular la distancia al jugador
-        float distancia = Vector3.Distance(transform.position, player.position);
+        //if (comportamiento == 1)
+        //{
+        //    transform.LookAt(player.transform);
+        //    GetComponent<Rigidbody>().velocity = transform.forward * speed * 2;
+        //}
+        //else
+        //{
+        //    GetComponent<Rigidbody>().velocity = transform.forward * speed;
+        //}
 
-        if (distancia <= rangoDeteccion)
+        if (comportamiento == 1) // Follow Player
         {
-            if (!enRango)
-            {
-                enRango = true;
-                CambiarEstado("Follow");
-            }
-
-            // Moverse hacia el jugador
-            Vector3 direccion = (player.position - transform.position).normalized;
-            transform.position += direccion * velocidad * Time.deltaTime;
-
-            // Asegurarse de que el Boss mire al jugador
-            transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
+            transform.LookAt(player.transform);
+            rb.velocity = transform.forward * speed;
         }
-        else
+        else // Idle
         {
-            if (enRango)
-            {
-                enRango = false;
-                CambiarEstado("Idle");
-            }
+            rb.velocity = Vector3.zero;
         }
     }
 
-    public void RecibirDaño(int cantidad)
+    private void OnCollisionEnter(Collision collision)
     {
-        vida -= cantidad;
-
-        if (vida <= 0)
+        if (collision.collider.tag == "Bala")
         {
-            Morir();
+            Destroy(collision.collider.gameObject);
+            vida = vida - 1;
+            if (vida <= 0)
+            {
+                GameObject particles = Instantiate(deathParticlesPrefab, transform.position, Quaternion.identity);
+                Destroy(particles, 1.0f);
+                Destroy(gameObject);
+            }
         }
     }
 
-    private void CambiarEstado(string nuevoEstado)
+    public void ActivarMovimiento(bool activar)
+    {
+        comportamiento = activar ? 1 : 0; // Cambia entre Idle (0) y Follow (1)
+        CambiarAnimacion(activar);
+    }
+
+    private void CambiarAnimacion(bool caminando)
     {
         if (animator != null)
         {
-            animator.SetTrigger(nuevoEstado);
+            animator.SetBool("WalkParam", caminando);
         }
-    }
-
-    private void Morir()
-    {
-        // Aquí puedes agregar efectos de muerte, partículas, etc.
-        Destroy(gameObject);
     }
 }

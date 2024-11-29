@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 70913163fd94a6a43a542f849e18901f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.84
+      value: 1.648
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70913163fd94a6a43a542f849e18901f,
         type: 3}
@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 70913163fd94a6a43a542f849e18901f,
         type: 3}
       propertyPath: m_CullingMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -85,6 +85,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2002647871628332361}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 70913163fd94a6a43a542f849e18901f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8575971770918582217}
   m_SourcePrefab: {fileID: 100100000, guid: 70913163fd94a6a43a542f849e18901f, type: 3}
 --- !u!1 &3460403915343527948 stripped
 GameObject:
@@ -132,5 +136,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 3
-  deathParticlesPrefab: {fileID: 0}
+  player: {fileID: 7476558936256643371, guid: aa6c98e1e16a7ab4ba74b2528765d4f5, type: 3}
+  deathParticlesPrefab: {fileID: 165606380172257878, guid: bb74ab8b27f248b4599706895c88df56,
+    type: 3}
   speed: 1
+--- !u!136 &8575971770918582217
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3460403915343527948}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1773982
+  m_Height: 0.7681339
+  m_Direction: 1
+  m_Center: {x: -0.008532047, y: 0.5271071, z: 0}

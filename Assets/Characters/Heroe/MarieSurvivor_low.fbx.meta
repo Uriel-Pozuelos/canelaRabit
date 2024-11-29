@@ -589,7 +589,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: root|ShootingShotgun2
+      name: Attack
       takeName: root|ShootingShotgun2
       internalID: -1321293383957745482
       firstFrame: 0
