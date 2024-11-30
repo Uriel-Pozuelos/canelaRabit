@@ -3,7 +3,22 @@ guid: 0ade7f3487ad03b47b39b11c0a365016
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 3a055c703e7abde4182945b946babb50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 31e04ab85d6aa7346ad028b38ca9e708, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: cbdeebb40030cd74397649a8cf5f274c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -120,7 +135,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: rig|idle
+      name: Idle
       takeName: rig|idle
       internalID: 1599155768152908184
       firstFrame: 0
@@ -236,7 +251,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: rig|walking
+      name: Walk
       takeName: rig|walking
       internalID: 8792363992049388215
       firstFrame: 0
@@ -331,7 +346,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
