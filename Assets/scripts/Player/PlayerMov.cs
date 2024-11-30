@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMov : MonoBehaviour
 {
     public float rotationSpeed = 3f; // Velocidad de rotación de la cámara
-    public float movementSpeed = 5f; // Velocidad de movimiento del personaje
+    public float movementSpeed = 1f; // Velocidad de movimiento del personaje
     public float jumpPower = 200f;
     public Transform groundCheckPosition;
     public float groundCheckRadius = 0.3f;
@@ -16,8 +16,9 @@ public class PlayerMov : MonoBehaviour
     private float rotateY;
     private float horizontal, vertical;
     private bool isGrounded;
-
-    void Awake()
+	public float turbo = 2f;
+	public GameObject prefabBala;
+	void Awake()
     {
         playerAnim = GetComponent<PlayerAnimations>();
         rb = GetComponent<Rigidbody>();
@@ -29,7 +30,24 @@ public class PlayerMov : MonoBehaviour
         HandleCameraRotation();
         AnimatePlayer();
         HandleAttack();
-    }
+
+		if (Input.GetButtonDown("Fire1"))
+		{
+			GameObject balaAux = Instantiate(prefabBala, transform.position + transform.forward * 2, Quaternion.identity);
+			balaAux.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
+			Destroy(balaAux, 2);
+		}
+
+		if (Input.GetKeyDown(KeyCode.LeftShift))
+		{
+			movementSpeed = movementSpeed * turbo;
+		}
+
+		if (Input.GetKeyUp(KeyCode.LeftShift))
+		{
+			movementSpeed = movementSpeed / turbo;
+		}
+	}
 
     private void HandleMovement()
     {
@@ -42,13 +60,6 @@ public class PlayerMov : MonoBehaviour
 
         // Ajustar velocidad de movimiento y hacerlo dependiente del tiempo
         transform.position += direction.normalized * movementSpeed * Time.deltaTime;
-
-        //// Salto
-        //isGrounded = Physics.CheckSphere(groundCheckPosition.position, groundCheckRadius, groundLayer);
-        //if (isGrounded && Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-        //}
     }
 
     private void HandleCameraRotation()

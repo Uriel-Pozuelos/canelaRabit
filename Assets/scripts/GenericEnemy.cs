@@ -29,15 +29,6 @@ public class GenericEnemy : MonoBehaviour
 
     void Update()
     {
-        //if (comportamiento == 1)
-        //{
-        //    transform.LookAt(player.transform);
-        //    GetComponent<Rigidbody>().velocity = transform.forward * speed * 2;
-        //}
-        //else
-        //{
-        //    GetComponent<Rigidbody>().velocity = transform.forward * speed;
-        //}
 
         if (comportamiento == 1) // Follow Player
         {

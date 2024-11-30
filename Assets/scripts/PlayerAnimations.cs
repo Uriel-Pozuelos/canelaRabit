@@ -32,4 +32,10 @@ public class PlayerAnimations : MonoBehaviour
     {
         anim.SetBool(attackParameter, false);
     }
+
+	public void SetAttackParam(bool isAttacking)
+	{
+		Animator animator = GetComponent<Animator>();
+		animator.SetBool("AttackParam", isAttacking);
+	}
 }

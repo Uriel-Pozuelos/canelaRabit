@@ -850,7 +850,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: root|Walking
+      name: Walk
       takeName: root|Walking
       internalID: -3863415479947880419
       firstFrame: 0
@@ -879,7 +879,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Walk
+      name: rootWalking
       takeName: root|Walking_something
       internalID: -7376063936855115244
       firstFrame: 0

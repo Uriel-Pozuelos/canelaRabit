@@ -193,10 +193,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4676bc242efc5f94089075aeed66e3fc,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6197813647767913889}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4676bc242efc5f94089075aeed66e3fc,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 279983065384085269}
   m_SourcePrefab: {fileID: 100100000, guid: 4676bc242efc5f94089075aeed66e3fc, type: 3}
 --- !u!1 &7476558936256643371 stripped
@@ -268,26 +264,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 3
-  playerAnim: {fileID: 0}
-  groundCheckPosition: {fileID: 0}
+  movementSpeed: 1
   jumpPower: 200
-  radius: 0.3
+  groundCheckPosition: {fileID: 0}
+  groundCheckRadius: 0.3
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  speed: 0.2
---- !u!114 &6197813647767913889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7476558936256643371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a4843b2e1498e648ab53bf5934cd0fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  turbo: 2
+  prefabBala: {fileID: 1205293230433507754, guid: dbac190bfd7ad65419721b84271b0a58,
+    type: 3}
 --- !u!114 &279983065384085269
 MonoBehaviour:
   m_ObjectHideFlags: 0
