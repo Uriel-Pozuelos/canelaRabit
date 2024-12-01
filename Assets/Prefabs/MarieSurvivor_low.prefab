@@ -274,6 +274,11 @@ MonoBehaviour:
   turbo: 2
   prefabBala: {fileID: 1205293230433507754, guid: dbac190bfd7ad65419721b84271b0a58,
     type: 3}
+  audioSource: {fileID: 0}
+  walkClip: {fileID: 8300000, guid: 13875d9b185a6304ebf489be80e6a2ee, type: 3}
+  jumpClip: {fileID: 8300000, guid: f83562a5589be3844a9ba43e0cf9b457, type: 3}
+  attackClip: {fileID: 8300000, guid: 3c6aa3a28e3e5fd49a647c99bcc2c915, type: 3}
+  turboClip: {fileID: 8300000, guid: fd4eb4ab16fbb1643a2070797a4cfd0d, type: 3}
 --- !u!114 &279983065384085269
 MonoBehaviour:
   m_ObjectHideFlags: 0

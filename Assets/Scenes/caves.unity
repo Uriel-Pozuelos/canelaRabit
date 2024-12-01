@@ -9888,10 +9888,10 @@ MonoBehaviour:
   prefabBala: {fileID: 582347911207565649, guid: d0fcd494f0113c346885b9dd01426e37,
     type: 3}
   audioSource: {fileID: 729762441670219337}
-  walkClip: {fileID: 8300000, guid: 8a0d847ad34a9cc4093a1902f4266cf4, type: 3}
-  jumpClip: {fileID: 8300000, guid: 8a0d847ad34a9cc4093a1902f4266cf4, type: 3}
-  attackClip: {fileID: 8300000, guid: 8a0d847ad34a9cc4093a1902f4266cf4, type: 3}
-  turboClip: {fileID: 8300000, guid: 8a0d847ad34a9cc4093a1902f4266cf4, type: 3}
+  walkClip: {fileID: 8300000, guid: 13875d9b185a6304ebf489be80e6a2ee, type: 3}
+  jumpClip: {fileID: 8300000, guid: f83562a5589be3844a9ba43e0cf9b457, type: 3}
+  attackClip: {fileID: 8300000, guid: 3c6aa3a28e3e5fd49a647c99bcc2c915, type: 3}
+  turboClip: {fileID: 8300000, guid: fd4eb4ab16fbb1643a2070797a4cfd0d, type: 3}
 --- !u!114 &8314421566908848824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9910,10 +9910,10 @@ MonoBehaviour:
   items: 0
   maxItems: 5
   audioSource: {fileID: 729762441670219337}
-  OnDamage: {fileID: 8300000, guid: 4b13ba24ffb0c414594c0d694dd033ef, type: 3}
-  OnItem: {fileID: 8300000, guid: 3e362398021c42443be7f5e55cd50aba, type: 3}
-  OnAddLife: {fileID: 8300000, guid: 3e362398021c42443be7f5e55cd50aba, type: 3}
-  OnReaload: {fileID: 8300000, guid: 3e362398021c42443be7f5e55cd50aba, type: 3}
+  OnDamage: {fileID: 8300000, guid: 1ceb61e5d0c004d4c90577dd56736737, type: 3}
+  OnItem: {fileID: 8300000, guid: c5529127494b0fd4699e14dd883b4e5d, type: 3}
+  OnAddLife: {fileID: 8300000, guid: 9ca5908914cd8014f8d71d4f9b5f1b6f, type: 3}
+  OnReaload: {fileID: 8300000, guid: 87a41d2626e6ef049ae951aafb0f0666, type: 3}
   Loading: {fileID: 7534185869224914739}
   isLoading: 0
   bossLife: 400
