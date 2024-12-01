@@ -45,12 +45,25 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             verticalVelocity = GameStateManager.Instance.jumpForce; // Asignar fuerza de salto del GameStateManager
+            GameStateManager.Instance.OnJump(); // Reproducir sonido de salto
         }
 
         // Correr con la tecla Shift
         if (Input.GetKey(KeyCode.LeftShift))
         {
             playerSpeed *= 1.5f; // Incrementar velocidad al correr
+        }
+
+        // Reproducir sonido de caminar si hay movimiento
+        if (playerInput.magnitude > 0 && isGrounded)
+        {
+            GameStateManager.Instance.OnWalk();
+        }
+
+        // Detectar disparo con clic izquierdo del ratón
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameStateManager.Instance.OnFire(); // Reproducir sonido de disparo
         }
     }
 

@@ -20,9 +20,16 @@ public class GameStateManager : MonoBehaviour
     public float followSpeed = 5f;
     public float rotationSpeed = 5f;
 
-
-    //gravity
+    // Gravedad
     public float gravity = 9.8f;
+
+    // Audio
+    public AudioClip onDamageSound;
+    public AudioClip onFireSound;
+    public AudioClip onJumpSound;
+    public AudioClip onWalkSound;
+
+    private AudioSource audioSource;
 
     private void Awake()
     {
@@ -35,12 +42,20 @@ public class GameStateManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this.gameObject);  // Persistir entre escenas
         }
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     // Métodos para modificar el estado del jugador
     public void TakeDamage(int damage)
     {
         health -= damage;
+        PlaySound(onDamageSound);
+
         if (health <= 0)
         {
             health = 0;
@@ -61,6 +76,37 @@ public class GameStateManager : MonoBehaviour
             level++;
             experience = 0;  // Reiniciar experiencia
             Debug.Log("Subiste de nivel: " + level);
+        }
+    }
+
+    // Métodos para reproducir sonidos
+    public void OnFire()
+    {
+        PlaySound(onFireSound);
+        Debug.Log("Disparo realizado");
+    }
+
+    public void OnJump()
+    {
+        PlaySound(onJumpSound);
+        Debug.Log("Salto realizado");
+    }
+
+    public void OnWalk()
+    {
+        PlaySound(onWalkSound);
+        Debug.Log("Jugador caminando");
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (clip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
+        else
+        {
+            Debug.LogWarning("Clip de audio o AudioSource no asignado.");
         }
     }
 
@@ -86,5 +132,4 @@ public class GameStateManager : MonoBehaviour
 
         return baseSpeed + (playerLevel * 0.2f * difficultyMultiplier);
     }
-
 }

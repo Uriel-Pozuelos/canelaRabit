@@ -10,34 +10,45 @@ public class GenericEnemy : MonoBehaviour
     public GameObject deathParticlesPrefab;
     public float speed;
 
+    public AudioClip stepSound; // Sonido de pasos
+    public AudioClip damageSound; // Sonido de daño
+    public AudioClip deathSound; // Sonido de muerte
+
     private int comportamiento = 0; // 0 = Idle, 1 = Follow Player
     private Animator animator;
     private Rigidbody rb;
+    public  AudioSource audioSource;
 
     private void Start()
     {
-        //comportamiento = 1;
-        //player = GameObject.Find("Player");
-        //InvokeRepeating("CambiarDireccion", 3, 3);
-
         comportamiento = 0; // Inicia en Idle
         player = GameObject.Find("Player");
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
         CambiarAnimacion(false); // Setea animación Idle
     }
 
     void Update()
     {
-
         if (comportamiento == 1) // Follow Player
         {
             transform.LookAt(player.transform);
             rb.velocity = transform.forward * speed;
+            if (!audioSource.isPlaying) // Reproduce pasos si no está ya sonando
+            {
+                audioSource.clip = stepSound;
+                audioSource.loop = true; // Repite mientras camina
+                audioSource.Play();
+            }
         }
         else // Idle
         {
             rb.velocity = Vector3.zero;
+            if (audioSource.isPlaying && audioSource.clip == stepSound)
+            {
+                audioSource.Stop(); // Detén sonido de pasos
+            }
         }
     }
 
@@ -47,12 +58,29 @@ public class GenericEnemy : MonoBehaviour
         {
             Destroy(collision.collider.gameObject);
             vida = vida - 1;
+
+            if (audioSource != null && damageSound != null)
+            {
+                audioSource.PlayOneShot(damageSound); // Reproduce sonido de daño
+            }
+
             if (vida <= 0)
             {
                 GameObject particles = Instantiate(deathParticlesPrefab, transform.position, Quaternion.identity);
                 Destroy(particles, 1.0f);
+
+                if (audioSource != null && deathSound != null)
+                {
+                    audioSource.PlayOneShot(deathSound); // Reproduce sonido de muerte
+                }
+
                 Destroy(gameObject);
             }
+        }
+
+        if (collision.collider.tag == "Player")
+        {
+            FindAnyObjectByType<PlayerHelth>().TakeDamage();
         }
     }
 

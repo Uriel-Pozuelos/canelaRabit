@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMov : MonoBehaviour
@@ -16,9 +15,20 @@ public class PlayerMov : MonoBehaviour
     private float rotateY;
     private float horizontal, vertical;
     private bool isGrounded;
-	public float turbo = 2f;
-	public GameObject prefabBala;
-	void Awake()
+    public float turbo = 2f;
+    public GameObject prefabBala;
+
+    // Audio
+    public AudioSource audioSource;
+    public AudioClip walkClip;
+    public AudioClip jumpClip;
+    public AudioClip attackClip;
+    public AudioClip turboClip;
+
+    private int bulletCount = 0;
+    private bool isCooldown = false;
+
+    void Awake()
     {
         playerAnim = GetComponent<PlayerAnimations>();
         rb = GetComponent<Rigidbody>();
@@ -31,23 +41,57 @@ public class PlayerMov : MonoBehaviour
         AnimatePlayer();
         HandleAttack();
 
-		if (Input.GetButtonDown("Fire1"))
-		{
-			GameObject balaAux = Instantiate(prefabBala, transform.position + transform.forward * 2, Quaternion.identity);
-			balaAux.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
-			Destroy(balaAux, 2);
-		}
+        if (Input.GetButtonDown("Fire1") && !isCooldown)
+        {
+            Shoot();
+        }
 
-		if (Input.GetKeyDown(KeyCode.LeftShift))
-		{
-			movementSpeed = movementSpeed * turbo;
-		}
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            movementSpeed = movementSpeed * turbo;
+            PlaySound(turboClip); // Reproducir sonido de turbo
+        }
 
-		if (Input.GetKeyUp(KeyCode.LeftShift))
-		{
-			movementSpeed = movementSpeed / turbo;
-		}
-	}
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            movementSpeed = movementSpeed / turbo;
+        }
+    }
+
+    private void Shoot()
+    {
+        GameObject balaAux = Instantiate(prefabBala, transform.position + transform.forward * 2, Quaternion.identity);
+        balaAux.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
+        Destroy(balaAux, 2);
+
+        PlaySound(attackClip); // Reproducir sonido de ataque
+
+        bulletCount++;
+        if (bulletCount >= 10)
+        {
+            StartCoroutine(CooldownCoroutine());
+        }
+    }
+
+    private IEnumerator CooldownCoroutine()
+    {
+        isCooldown = true;
+        bulletCount = 0;
+
+        // Mostrar el loading
+        FindAnyObjectByType<PlayerHelth>().visbleLoading();
+
+        // Permitir que Unity actualice la UI
+        yield return null;
+
+        // Esperar los 10 segundos
+        yield return new WaitForSeconds(10f);
+
+        // Ocultar el loading
+        FindAnyObjectByType<PlayerHelth>().hideLoading();
+        isCooldown = false;
+    }
+
 
     private void HandleMovement()
     {
@@ -60,6 +104,12 @@ public class PlayerMov : MonoBehaviour
 
         // Ajustar velocidad de movimiento y hacerlo dependiente del tiempo
         transform.position += direction.normalized * movementSpeed * Time.deltaTime;
+
+        // Reproducir sonido de caminar si hay movimiento
+        if ((horizontal != 0 || vertical != 0) && isGrounded && !audioSource.isPlaying)
+        {
+            PlaySound(walkClip);
+        }
     }
 
     private void HandleCameraRotation()
@@ -92,6 +142,31 @@ public class PlayerMov : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             playerAnim.PlayerAttack();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
         }
     }
 }
