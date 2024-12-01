@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
+    private bool isCollected = false;
+
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (isCollected) return;
+
+        if (other.CompareTag("Player"))
         {
+            isCollected = true;
             FindAnyObjectByType<PlayerHelth>().ItemConseguido();
-            Destroy(gameObject);
+            StartCoroutine(DestroyAfterDelay());
         }
+    }
+
+    private IEnumerator DestroyAfterDelay()
+    {
+        yield return null; // Espera un frame antes de destruir (opcional)
+        Destroy(gameObject);
     }
 }

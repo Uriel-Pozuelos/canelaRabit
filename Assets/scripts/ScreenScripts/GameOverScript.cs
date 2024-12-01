@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour
 {
-	public void Start()
+	public void Sta()
 	{
-		SceneManager.LoadScene("Start");
+		SceneManager.LoadScene("Caves");
 	}
 
 	public void Exit()

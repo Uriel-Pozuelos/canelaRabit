@@ -8,7 +8,7 @@ public class StartFunctions : MonoBehaviour
 	// Funcion para iniciar el juego, ir a la escena de juego
 	public void StartGame()
 	{
-		SceneManager.LoadScene("Game");
+		SceneManager.LoadScene("caves");
 	}
 
 	// Funcion para ir a la escena de instrucciones

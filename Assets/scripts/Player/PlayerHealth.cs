@@ -21,6 +21,8 @@ public class PlayerHealth : MonoBehaviour
 		textoItems.text = 0.ToString() + "de " + maxItems.ToString();
 	}
 
+
+
 	public void RecibirGolpe()
 	{
 		vida = vida - 5;

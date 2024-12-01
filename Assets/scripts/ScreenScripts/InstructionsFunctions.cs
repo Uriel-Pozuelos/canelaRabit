@@ -7,11 +7,13 @@ public class InstructionsFunctions : MonoBehaviour
 {
     public void Index()
     {
-		SceneManager.LoadScene("Start");
+		SceneManager.LoadScene("caves");
 	}
 
-	public void Start()
-	{
-		SceneManager.LoadScene("Wolrd");
-	}
+    public void Menu()
+    {
+        SceneManager.LoadScene("Start");
+    }
+
+
 }
