@@ -656,6 +656,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6917859309537811240, guid: 9678ef684893d4d439412cdc471bda1c,
+        type: 3}
+      propertyPath: jumpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f83562a5589be3844a9ba43e0cf9b457, type: 3}
+    - target: {fileID: 6917859309537811240, guid: 9678ef684893d4d439412cdc471bda1c,
+        type: 3}
+      propertyPath: walkClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 13875d9b185a6304ebf489be80e6a2ee, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

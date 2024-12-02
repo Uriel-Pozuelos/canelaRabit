@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d9483d14376a2fb48bf6f3a82af6edff,
         type: 3}
       propertyPath: m_Name
-      value: rat
+      value: gigarath
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: d9483d14376a2fb48bf6f3a82af6edff,
         type: 3}
@@ -159,9 +159,9 @@ MonoBehaviour:
   deathParticlesPrefab: {fileID: 165606380172257878, guid: bb74ab8b27f248b4599706895c88df56,
     type: 3}
   speed: 1
-  stepSound: {fileID: 8300000, guid: c70a68634385f2f48af8bbb500a9f10d, type: 3}
-  damageSound: {fileID: 8300000, guid: c70a68634385f2f48af8bbb500a9f10d, type: 3}
-  deathSound: {fileID: 8300000, guid: c70a68634385f2f48af8bbb500a9f10d, type: 3}
+  stepSound: {fileID: 8300000, guid: cebd33086653c7c4b966a7db80f234fc, type: 3}
+  damageSound: {fileID: 8300000, guid: 048f3229d6a55374cb30a67c1de8f4cb, type: 3}
+  deathSound: {fileID: 8300000, guid: 8adab4ca83875104c945871f5489fca8, type: 3}
   audioSource: {fileID: 1459513520261073883}
 --- !u!136 &1751559109418744924
 CapsuleCollider:

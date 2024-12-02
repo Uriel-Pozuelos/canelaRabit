@@ -291,3 +291,7 @@ MonoBehaviour:
   enragedSpeedMultiplier: 2
   damage: 50
   enragedDamage: 70
+  walkBossSound: {fileID: 8300000, guid: cebd33086653c7c4b966a7db80f234fc, type: 3}
+  damagedBossSound: {fileID: 8300000, guid: a21a11a049c8e3444a97a557f0d50536, type: 3}
+  deathBossSound: {fileID: 8300000, guid: 0cdfdd691732fed4a80d284ea2fc08a7, type: 3}
+  enragedBossSound: {fileID: 8300000, guid: 822f5c72d69c851469fc6c772be0e29c, type: 3}

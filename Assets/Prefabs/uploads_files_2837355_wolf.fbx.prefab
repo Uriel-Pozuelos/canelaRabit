@@ -181,9 +181,9 @@ MonoBehaviour:
   deathParticlesPrefab: {fileID: 165606380172257878, guid: bb74ab8b27f248b4599706895c88df56,
     type: 3}
   speed: 1
-  stepSound: {fileID: 8300000, guid: c8f9b4c00674a33408b6eb7a17d7dc64, type: 3}
-  damageSound: {fileID: 8300000, guid: c8f9b4c00674a33408b6eb7a17d7dc64, type: 3}
-  deathSound: {fileID: 8300000, guid: c8f9b4c00674a33408b6eb7a17d7dc64, type: 3}
+  stepSound: {fileID: 8300000, guid: cebd33086653c7c4b966a7db80f234fc, type: 3}
+  damageSound: {fileID: 8300000, guid: af38be40c02a07b428e46f8f5eb5456d, type: 3}
+  deathSound: {fileID: 8300000, guid: 6b263eee48cba03408012bcf274189d2, type: 3}
   audioSource: {fileID: 9159928619598118621}
 --- !u!136 &6804433399045597427
 CapsuleCollider:
