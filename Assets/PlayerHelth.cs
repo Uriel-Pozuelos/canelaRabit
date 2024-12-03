@@ -26,7 +26,7 @@ public class PlayerHelth : MonoBehaviour
     public bool isLoading = false;
 
     [Header("Boos")]
-    public int bossLife =400;
+    public int bossLife = 400;
     public Image barraBoss;
     public Image jefe;
 
@@ -117,7 +117,7 @@ public class PlayerHelth : MonoBehaviour
     {
         // Incrementar los ítems internamente multiplicando por 6
         items += 6;
-        if(items > 1)
+        if (items > 1)
         {
             //hacer visible el texto de items
             textoItems.gameObject.SetActive(true);
@@ -136,11 +136,4 @@ public class PlayerHelth : MonoBehaviour
         }
     }
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
